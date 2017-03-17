@@ -1,0 +1,506 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+<head>
+	<title>WorldEngine GUI- Table of Contents</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="generator" content="HelpNDoc Personal Edition 4.9.2.132">
+	<link type="text/css" rel="stylesheet" media="all" href="css/reset.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/silver-theme/jquery-ui-1.8.12.custom.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/dynatree/chm/ui.dynatree.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/base.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/hnd.css" />
+    <link type="text/css" rel="stylesheet" media="all" href="css/toc.css" />
+	<!--[if lte IE 8]>
+		<link type="text/css" rel="stylesheet" media="all" href="css/ielte8.css" />
+	<![endif]-->
+	<style type="text/css">
+		#tabs .ui-widget-header
+		{
+			background-color: #EFEFEF;
+		}
+	</style>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/jquery-ui-1.8.17.custom.min.js"></script>
+    <script type="text/javascript" src="js/jquery.cookie.js"></script>
+    <script type="text/javascript" src="js/jquery.dynatree.min.js"></script>
+	<script type="text/javascript" src="js/hndjsse.js"></script>
+	<script type="text/javascript">
+	
+		window.bSearchDataLoaded = false;
+		var sHelpIdToActivate = '';
+	
+		$(document).ready(function()
+		{
+			var sAnchorName = '';
+			try { sAnchorName = top.location.href.substring(top.location.href.lastIndexOf("#") + 1, top.location.href.length); }
+			catch(err) { sAnchorName = ''; }
+			var nSelectedTab = 0;
+			if (sAnchorName == '_index') nSelectedTab = 1
+			else if (sAnchorName == '_search') nSelectedTab = 2;			
+			$("#tabs").tabs({
+				selected: nSelectedTab,
+				select: function(event, ui) { HideKwPopup(); }
+			});
+			
+			// Toc
+			if ($("#tab-toc").length) {
+				$("#tab-toc").dynatree({
+					clickFolderMode: 1,
+					debugLevel: 0,
+					imagePath: 'css/dynatree/chm/',
+					onActivate: function(node){
+						if ($("#tab-keywords").length && $("#tab-keywords").dynatree && $("#tab-keywords").dynatree("getTree") && $("#tab-keywords").dynatree("getTree").activateKey)
+							$("#tab-keywords").dynatree("getTree").activateKey(null);
+						if(node.data.href && node.data.href != '#'){
+							window.open(node.data.href, node.data.target);
+						}
+					}
+				});
+				// Expand all nodes if required
+				$("#tab-toc").dynatree("getRoot").visit(function(node){
+						node.expand(true);
+					});
+				// Select the active help id
+				if (sHelpIdToActivate != '') $("#tab-toc").dynatree("getTree").activateKey(sHelpIdToActivate);
+			}
+			
+			// Keywords
+			
+			if ($("#tab-keywords").length) {
+				$("#tab-keywords").dynatree({
+					clickFolderMode: 1,
+					debugLevel: 0,
+					imagePath: 'css/dynatree/chm/',
+					onClick: function(node, event){
+						HideKwPopup();
+						if (node.data && node.data.click)
+						{
+							var aRefList = null;
+							eval('aRefList=' + node.data.click);
+							if (ShowKwPopup(node.li, aRefList))
+							{
+								if ($("#tab-toc") && $("#tab-toc").dynatree && $("#tab-toc").dynatree("getTree") && $("#tab-toc").dynatree("getTree").activateKey)
+									$("#tab-toc").dynatree("getTree").activateKey(null);
+								if(node.data.href && node.data.href != '#'){
+									window.open(node.data.href, node.data.target);
+								}
+							}
+						}
+					}
+				});
+				// Expand all nodes if required
+				$("#tab-keywords").dynatree("getRoot").visit(function(node){
+						node.expand(true);
+					});
+				}
+			
+			// Load search data
+			(function() {
+				var se = document.createElement('script'); se.type = 'text/javascript'; se.async = true;
+				se.src = 'js/hndsd.js';
+				var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(se, s);
+			})();
+		});
+		
+		$('body').click(function() {
+			HideKwPopup();
+		});
+		
+		function SelectTocItem(sHelpId)
+		{
+			if ($("#tab-toc").length && $("#tab-toc").dynatree && $("#tab-toc").dynatree("getTree") && $("#tab-toc").dynatree("getTree").getNodeByKey) {
+				$("#tab-toc").dynatree("getTree").getNodeByKey(sHelpId).activateSilently();
+			}
+			else {
+				sHelpIdToActivate = sHelpId;
+			}
+		}
+		
+		function HideKwPopup()
+		{
+			if($("#popupMenu")) $("#popupMenu").remove();
+		}
+		
+		function ShowKwPopup(oSender, aLinks)
+		{
+			HideKwPopup();
+			if (!aLinks || !aLinks.length || aLinks.length == 0) return false
+			else if (aLinks.length == 1) return true
+			else
+			{
+				var oParentDiv = document.createElement("DIV");
+				oParentDiv.id = "popupMenu";
+				var oLink = null;
+				// Close button
+				oLink = document.createElement("SPAN");
+				oLink.className = "close-button";
+				oLink.innerHTML = "X";
+				oLink.href = "#";
+				oLink.onclick = HideKwPopup;
+				oParentDiv.appendChild(oLink);
+				// Items
+				for (var nCnt=0; nCnt<aLinks.length; nCnt++)
+				{
+					oLink = document.createElement("A");
+					oLink.innerHTML = aLinks[nCnt][0];
+					oLink.href = aLinks[nCnt][1];
+					oLink.target = "FrameMain";
+					oLink.onclick = HideKwPopup;
+					oParentDiv.appendChild(oLink);
+				}
+				document.body.appendChild(oParentDiv);
+				var pos = $(oSender).offset(); 
+				var height = $(oSender).height();
+				$(oParentDiv).css({
+					"left": (pos.left+20) + "px",
+					"top": (pos.top + height + 5) + "px"
+				});
+				$(oParentDiv).show();
+				return false;
+			}
+		}
+		
+		function PerformSearch()
+		{
+			if (!window.bSearchDataLoaded) {
+				$("#search_results").html("Search engine data hasn't been fully loaded yet or an error occurred while loading it. This usually happens when documentation is browsed locally.");
+				return;
+			}
+			sValue = $("#search_value").val();
+			$("#search_results").html('Searching...');
+			var oSearchEngine = new HndJsSe;
+			oSearchEngine.ParseInput(sValue);			
+			oSearchEngine.PerformSearch();
+			if (!oSearchEngine.aResults || !oSearchEngine.aResults.length)
+			{
+				$("#search_results").html('No results found.');
+			}
+			else
+			{
+				$("#search_results").html('<div id="search_results_content"></div>');
+				var oUl = $("#search_results_content").append("<ul id='lr'></ul>").find("ul");
+				for (var nCnt = 0; nCnt < oSearchEngine.aResults.length; nCnt++)
+				{
+					if (oSearchEngine.aResults[nCnt][0] < aTl.length)
+					{
+						oUl.append("<li><a href='" + aTl[oSearchEngine.aResults[nCnt][0]][0] + "?search=" + escape(sValue) + "' target='FrameMain'>" + unescape(aTl[oSearchEngine.aResults[nCnt][0]][1]) + "</a></li>");
+					}
+				}
+				// Tree
+				$("#search_results_content").dynatree({
+					clickFolderMode: 1,
+					debugLevel: 0,
+					imagePath: 'css/dynatree/chm/',
+					onActivate: function(node){
+						if ($("#search_results_content") && $("#search_results_content").dynatree && $("#search_results_content").dynatree("getTree") && $("#search_results_content").dynatree("getTree").activateKey)
+							$("#search_results_content").dynatree("getTree").activateKey(null);
+						if(node.data.href && node.data.href != '#'){
+							window.open(node.data.href, node.data.target);
+						}
+					}
+				});
+			}
+		}
+	</script>
+</head>
+
+<body>
+
+	<div id="tabs">
+		<ul>
+			<li><a href="#tab-toc">Contents</a></li>
+			<li><a href="#tab-keywords">Index</a></li>
+			<li><a href="#tab-search">Search</a></li>
+			</ul>
+		<div id="tab-toc">
+			<ul id="toc" class="">
+
+				<li class="folder" id="Introduction" data="">
+							<a
+							href="Introduction.html"
+							target="FrameMain">
+								Introduction</a>
+
+				<ul><li class="" id="Whatsnew" data="">
+							<a
+							href="Whatsnew.html"
+							target="FrameMain">
+								What's new</a>
+
+				</li><li class="" id="Licences" data="">
+							<a
+							href="Licences.html"
+							target="FrameMain">
+								Licences</a>
+
+				</li></ul></li><li class="folder" id="GettingStarted" data="">
+							<a
+							href="GettingStarted.html"
+							target="FrameMain">
+								Getting Started</a>
+
+				<ul><li class="" id="Systemrequirements" data="">
+							<a
+							href="Systemrequirements.html"
+							target="FrameMain">
+								System requirements</a>
+
+				</li><li class="" id="Gettinghelp" data="">
+							<a
+							href="Gettinghelp.html"
+							target="FrameMain">
+								Getting help</a>
+
+				</li></ul></li><li class="folder" id="MapsTab" data="">
+							<a
+							href="MapsTab.html"
+							target="FrameMain">
+								Maps Tab</a>
+
+				<ul><li class="folder" id="TheMaps" data="">
+							<a
+							href="TheMaps.html"
+							target="FrameMain">
+								The Maps</a>
+
+				<ul><li class="" id="Biomes" data="">
+							<a
+							href="Biomes.html"
+							target="FrameMain">
+								Biomes</a>
+
+				</li><li class="" id="Elevation" data="">
+							<a
+							href="Elevation.html"
+							target="FrameMain">
+								Elevation</a>
+
+				</li><li class="" id="GrayscaleHeightmap" data="">
+							<a
+							href="GrayscaleHeightmap.html"
+							target="FrameMain">
+								Grayscale Heightmap</a>
+
+				</li><li class="" id="Humidity" data="">
+							<a
+							href="Humidity.html"
+							target="FrameMain">
+								Humidity</a>
+
+				</li><li class="" id="Icecaps" data="">
+							<a
+							href="Icecaps.html"
+							target="FrameMain">
+								Icecaps</a>
+
+				</li><li class="" id="NormalMap" data="">
+							<a
+							href="NormalMap.html"
+							target="FrameMain">
+								Normal Map</a>
+
+				</li><li class="" id="Ocean" data="">
+							<a
+							href="Ocean.html"
+							target="FrameMain">
+								Ocean</a>
+
+				</li><li class="" id="Permeability" data="">
+							<a
+							href="Permeability.html"
+							target="FrameMain">
+								Permeability</a>
+
+				</li><li class="" id="Plates" data="">
+							<a
+							href="Plates.html"
+							target="FrameMain">
+								Plates</a>
+
+				</li><li class="" id="Precipitation" data="">
+							<a
+							href="Precipitation.html"
+							target="FrameMain">
+								Precipitation</a>
+
+				</li><li class="" id="Rivers" data="">
+							<a
+							href="Rivers.html"
+							target="FrameMain">
+								Rivers</a>
+
+				</li><li class="" id="Satellite" data="">
+							<a
+							href="Satellite.html"
+							target="FrameMain">
+								Satellite</a>
+
+				</li><li class="" id="ScatterPlot" data="">
+							<a
+							href="ScatterPlot.html"
+							target="FrameMain">
+								Scatter Plot</a>
+
+				</li><li class="" id="Temperature" data="">
+							<a
+							href="Temperature.html"
+							target="FrameMain">
+								Temperature</a>
+
+				</li><li class="" id="Wind" data="">
+							<a
+							href="Wind.html"
+							target="FrameMain">
+								Wind</a>
+
+				</li></ul></li></ul></li><li class="folder" id="MapOptionsTab" data="">
+							<a
+							href="MapOptionsTab.html"
+							target="FrameMain">
+								Map Options Tab</a>
+
+				<ul><li class="folder" id="MapParameters" data="">
+							<a
+							href="MapParameters.html"
+							target="FrameMain">
+								Map Parameters</a>
+
+				<ul><li class="" id="Erosion" data="">
+							<a
+							href="Erosion.html"
+							target="FrameMain">
+								Erosion</a>
+
+				</li><li class="" id="Humidity1" data="">
+							<a
+							href="Humidity1.html"
+							target="FrameMain">
+								Humidity</a>
+
+				</li><li class="" id="Hydrology" data="">
+							<a
+							href="Hydrology.html"
+							target="FrameMain">
+								Hydrology</a>
+
+				</li><li class="" id="IceCaps1" data="">
+							<a
+							href="IceCaps1.html"
+							target="FrameMain">
+								Ice Caps</a>
+
+				</li><li class="" id="Irrigation" data="">
+							<a
+							href="Irrigation.html"
+							target="FrameMain">
+								Irrigation</a>
+
+				</li><li class="" id="Permeability1" data="">
+							<a
+							href="Permeability1.html"
+							target="FrameMain">
+								Permeability</a>
+
+				</li><li class="" id="Precipitation1" data="">
+							<a
+							href="Precipitation1.html"
+							target="FrameMain">
+								Precipitation</a>
+
+				</li><li class="" id="Temperature1" data="">
+							<a
+							href="Temperature1.html"
+							target="FrameMain">
+								Temperature</a>
+
+				</li><li class="" id="Wind1" data="">
+							<a
+							href="Wind1.html"
+							target="FrameMain">
+								Wind</a>
+
+				</li></ul></li></ul></li><li class="" id="WorldOptionsTab" data="">
+							<a
+							href="WorldOptionsTab.html"
+							target="FrameMain">
+								World Options Tab</a>
+
+				</li><li class="folder" id="AncientMapOptionsTab" data="">
+							<a
+							href="AncientMapOptionsTab.html"
+							target="FrameMain">
+								Ancient Map Options Tab</a>
+
+				<ul><li class="" id="AncientWorldMap" data="">
+							<a
+							href="AncientWorldMap.html"
+							target="FrameMain">
+								Ancient World Map</a>
+
+				</li></ul></li><li class="folder" id="Menus" data="">
+							<a
+							href="Menus.html"
+							target="FrameMain">
+								Menus</a>
+
+				<ul><li class="" id="File" data="">
+							<a
+							href="File.html"
+							target="FrameMain">
+								File</a>
+
+				</li><li class="" id="Zoom" data="">
+							<a
+							href="Zoom.html"
+							target="FrameMain">
+								Zoom</a>
+
+				</li><li class="" id="World" data="">
+							<a
+							href="World.html"
+							target="FrameMain">
+								World</a>
+
+				</li><li class="" id="3DView" data="">
+							<a
+							href="3DView.html"
+							target="FrameMain">
+								3D View</a>
+
+				</li><li class="" id="Help" data="">
+							<a
+							href="Help.html"
+							target="FrameMain">
+								Help</a>
+
+				</li></ul></li><li class="" id="Toolbars" data="">
+							<a
+							href="Toolbars.html"
+							target="FrameMain">
+								Toolbars</a>
+
+				</li></ul>
+		</div>
+		
+		<div id="tab-keywords">
+			<ul id="keywords">
+
+				</ul>
+		</div>
+		
+		<div id="tab-search">
+			<form onsubmit="PerformSearch(); return false;">
+				<label for="search_value">Search:</label>
+				<input id="search_value" name="search_value"></input>
+				<input type="submit" value="Search"/>
+			</form>
+			<div id="search_results"></div>
+		</div>
+		
+		</div>
+    
+</body>
+
+</html>
+

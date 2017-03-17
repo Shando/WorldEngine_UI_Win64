@@ -1,0 +1,141 @@
+﻿<html>
+	
+<head>
+	<title>Introduction</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="generator" content="HelpNDoc Personal Edition 4.9.2.132">
+	<meta name="keywords" content="">
+	
+	<link type="text/css" rel="stylesheet" media="all" href="css/reset.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/base.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/hnd.css" />
+	<!--[if lte IE 8]>
+		<link type="text/css" rel="stylesheet" media="all" href="css/ielte8.css" />
+	<![endif]-->
+	<style type="text/css">
+		#topic_header
+		{
+			background-color: #EFEFEF;
+		}
+	</style>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/hnd.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function()
+		{
+			if (top.frames.length == 0)
+			{
+				var sTopicUrl = top.location.href.substring(top.location.href.lastIndexOf("/") + 1, top.location.href.length);
+				top.location.href = "WorldEngine GUI.html?" + sTopicUrl;
+			}
+			else
+			{
+				var bTocSelected = false;
+				(function waitForTOC()
+				{
+					if (top && top.FrameTOC && top.FrameTOC.SelectTocItem)
+					{
+						top.FrameTOC.SelectTocItem("Introduction");
+						bTocSelected = true;
+					}
+					if (!bTocSelected) setTimeout(function() { waitForTOC(); }, 300);
+				})();
+			}
+		});
+	</script>
+	
+	</head>
+
+<body>
+
+<div id="topic_header">
+			<div id="topic_header_content">
+				<h1 id="topic_header_text">Introduction</h1>
+				
+				</div>
+			<div id="topic_header_nav">
+				<a href="Whatsnew.html"><img src="img/arrow_right.png" alt="Next"/></a>
+				
+				</div>
+			<div class="clear"></div>
+		</div>
+	<div id="topic_content">
+		
+<p></p>
+<h1 class="rvps4"><span class="rvts0"><span class="rvts11">GUI for WorldEngine</span></span></h1>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Hello and welcome to my GUI for WorldEngine (</span><a class="rvts12" href="http://world-engine.org/" target="_blank">http://world-engine.org/</a><span class="rvts6">). </span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Firstly, I'd just like to say a big "THANK YOU" to Bret Curtis and Federico Tomassetti, without whom we wouldn't have WorldEngine, and this GUI wouldn't exist! For those of you who aren't familiar with WorldEngin, don't worry, because this Help File will hopefully get you up and running in no time.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">OK, that's enough rambling, let's get down to introducing the star of this particular show:</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps6"><span class="rvts13">WorldEngine</span></p>
+<p class="rvps5"><span class="rvts14"><br/></span></p>
+<p class="rvps2"><span class="rvts6">WorldEngine is a fantastic piece of software that allows you to generate realistic worlds using</span><span class="rvts6"> various simulations, such as plate tectonics, rainfall, erosion, etc. It is mainly written in Python and can be run from the command line. But, who likes to use the command line nowadays? Not me! So, that's why I created this GUI in PyQt to allow you much more freedom to create your worlds.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">As stated on the WorldEngine website:</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6">"</span><span class="rvts16">Worlds are generated using plate simulations, erosion, rain shadows, Holdridge life zones model and plenty of other phenomenon.</span><span class="rvts6">"</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">In fact, WorldEngine contains the following simulations of various real-world conditions:</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<ul style="text-indent: 0px; margin-left: 24px; list-style-position: outside; list-style-type: disc;">
+<li class="rvps2"><span class="rvts6">Elevation</span></li>
+<li class="rvps2"><span class="rvts6">Oceans</span></li>
+<li class="rvps2"><span class="rvts6">Temperature</span></li>
+<li class="rvps2"><span class="rvts6">Precipitation</span></li>
+<li class="rvps2"><span class="rvts6">Erosion</span></li>
+<li class="rvps2"><span class="rvts6">Hydrology</span></li>
+<li class="rvps2"><span class="rvts6">Irrigation</span></li>
+<li class="rvps2"><span class="rvts6">Humidity</span></li>
+<li class="rvps2"><span class="rvts6">Permeability</span></li>
+<li class="rvps2"><span class="rvts6">Biomes</span></li>
+<li class="rvps2"><span class="rvts6">Icecaps</span></li>
+<li class="rvps2"><span class="rvts6">Wind</span></li>
+</ul>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">As you can see, the list is pretty comprehensive and will allow you to create some reasonably realistic worlds.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">The Command Line version of WorldEngine allows you to create several </span><span class="rvts15">Maps</span><span class="rvts6"> to show off various aspects of your world:</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<ul style="text-indent: 0px; margin-left: 24px; list-style-position: outside; list-style-type: disc;">
+<li class="rvps2"><a class="rvts12" href="AncientWorldMap.html">Ancient World</a><span class="rvts6"> (this is a Map of your world drawn in a way that follows the old Asian Map traditions)</span></li>
+<li class="rvps2"><a class="rvts12" href="Elevation.html">Elevation</a><span class="rvts6"> (a colourful Map showing the various heights of the land in your world)</span></li>
+<li class="rvps2"><a class="rvts12" href="Precipitation.html">Precipitation</a><span class="rvts6"> (a Map showing where rain is likely to fall in your world, and how much) </span></li>
+<li class="rvps2"><a class="rvts12" href="Temperature.html">Temperature</a><span class="rvts6"> (a Map showing the varying temperatures of your world)</span></li>
+<li class="rvps2"><a class="rvts12" href="Biomes.html">Biomes</a><span class="rvts6"> (a Map showing the different types of land in your world)</span></li>
+<li class="rvps2"><a class="rvts12" href="Ocean.html">Ocean</a><span class="rvts6"> (a Map showing the oceans of your world)</span></li>
+<li class="rvps2"><a class="rvts12" href="Icecaps.html">Icecaps</a><span class="rvts6"> (a Map showing the ice caps of your world)</span></li>
+<li class="rvps2"><a class="rvts12" href="Rivers.html">Rivers</a><span class="rvts6"> (a Map showing all the rivers and lakes of your world)</span></li>
+<li class="rvps2"><a class="rvts12" href="GrayscaleHeightmap.html">Grayscale Heightmap</a><span class="rvts6"> (very useful if you want to use your world in a game engine)</span></li>
+<li class="rvps2"><a class="rvts12" href="Satellite.html">Satellite</a><span class="rvts6"> (a Map showing your world as it would look from a satellite in orbit)</span></li>
+<li class="rvps2"><a class="rvts12" href="ScatterPlot.html">Scatter Plot</a><span class="rvts6"> (a Map that shows a scatter plot of the humidity &amp; temperature across your world)</span></li>
+</ul>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">To this list, I have also added the following:</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<ul style="text-indent: 0px; margin-left: 24px; list-style-position: outside; list-style-type: disc;">
+<li class="rvps2"><a class="rvts12" href="Wind.html">Wind</a><span class="rvts6"> (a Map showing the winds that blow across your world)</span></li>
+<li class="rvps2"><a class="rvts12" href="Permeability.html">Permeability</a><span class="rvts6"> (a Map showing the permeability of your world)</span></li>
+<li class="rvps2"><a class="rvts12" href="Humidity.html">Humidity</a><span class="rvts6"> (a Map showing the humidity across your world)</span></li>
+<li class="rvps2"><a class="rvts12" href="NormalMap.html">Normal Map</a><span class="rvts6"> (a Normal Map of your world - for use in game engines)</span></li>
+<li class="rvps2"><a class="rvts12" href="Plates.html">Plates</a><span class="rvts6"> (a colourful Map showing the Plates underlying your world)</span></li>
+</ul>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">To see examples of each of the Maps, just click on the links above, or go to the relevant Map page.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Well, I think that's enough of an intro, so feel free to select options in the Table of Contents to delve deeper into WorldEngine and this GUI.</span></p>
+<p></p>
+<p class="rvps7"><span class="rvts17">Created with the Personal Edition of HelpNDoc: </span><a class="rvts18" href="http://www.helpndoc.com/feature-tour/create-help-files-for-the-qt-help-framework">Create help files for the Qt Help Framework</a></p>
+</div>
+	
+	<div id="topic_footer">
+
+			<div id="topic_footer_content">
+				Copyright &copy; 2017 by SpinalSoft (AU). All Rights Reserved.</div>
+		</div>
+	</body>
+	
+</html>
+

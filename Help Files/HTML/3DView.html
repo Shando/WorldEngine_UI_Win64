@@ -1,0 +1,104 @@
+﻿<html>
+	
+<head>
+	<title>3D View</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="generator" content="HelpNDoc Personal Edition 4.9.2.132">
+	<meta name="keywords" content="">
+	
+	<link type="text/css" rel="stylesheet" media="all" href="css/reset.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/base.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/hnd.css" />
+	<!--[if lte IE 8]>
+		<link type="text/css" rel="stylesheet" media="all" href="css/ielte8.css" />
+	<![endif]-->
+	<style type="text/css">
+		#topic_header
+		{
+			background-color: #EFEFEF;
+		}
+	</style>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/hnd.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function()
+		{
+			if (top.frames.length == 0)
+			{
+				var sTopicUrl = top.location.href.substring(top.location.href.lastIndexOf("/") + 1, top.location.href.length);
+				top.location.href = "WorldEngine GUI.html?" + sTopicUrl;
+			}
+			else
+			{
+				var bTocSelected = false;
+				(function waitForTOC()
+				{
+					if (top && top.FrameTOC && top.FrameTOC.SelectTocItem)
+					{
+						top.FrameTOC.SelectTocItem("3DView");
+						bTocSelected = true;
+					}
+					if (!bTocSelected) setTimeout(function() { waitForTOC(); }, 300);
+				})();
+			}
+		});
+	</script>
+	
+	</head>
+
+<body>
+
+<div id="topic_header">
+			<div id="topic_header_content">
+				<h1 id="topic_header_text">3D View</h1>
+				
+				<div id="topic_breadcrumb">
+					<a href="Menus.html">Menus</a> &rsaquo;&rsaquo; </div>
+				</div>
+			<div id="topic_header_nav">
+				<a href="Menus.html"><img src="img/arrow_up.png" alt="Parent"/></a>
+				
+				<a href="World.html"><img src="img/arrow_left.png" alt="Previous"/></a>
+				
+				<a href="Help.html"><img src="img/arrow_right.png" alt="Next"/></a>
+				
+				</div>
+			<div class="clear"></div>
+		</div>
+	<div id="topic_content">
+		
+<p></p>
+<h1 class="rvps4"><span class="rvts0"><span class="rvts11">3D View Menu</span></span></h1>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">This menu contains one option that opens up the 3D View of the World.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><img alt="" style="padding : 1px;" src="lib/Menu - 3D View.png"></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Once you have clicked on </span><span class="rvts16">3D View</span><span class="rvts6">, you will see another Window that contains a representation of your World in glorious 3D (courtesy of Pi3D - </span><a class="rvts12" href="http://pi3d.github.io/html/ReadMe.html">http://pi3d.github.io/html/ReadMe.html</a><span class="rvts6"> - with thanks to Tim, Paddy &amp; Tom):</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><img alt="" style="padding : 1px;" src="lib/3D View1.png"></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Note that this is extremely limited in that it only shows the one texture (If anyone is a whizz with Pi3D/PyGame, please feel free to add more textures to properly show Oceans, Rivers, Mountains etc.), but it does give you a general idea of what your World will look like.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">To move around, use the following:</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Mouse</span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6">To </span><span class="rvts16">ROTATE RIGHT</span><span class="rvts6"> &amp; </span><span class="rvts16">LEFT</span><span class="rvts6"> and to </span><span class="rvts16">LOOK UP</span><span class="rvts6"> &amp; </span><span class="rvts16">DOWN</span></p>
+<p class="rvps2"><span class="rvts6">W Key</span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6">To move </span><span class="rvts16">FORWARDS</span></p>
+<p class="rvps2"><span class="rvts6">S Key</span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6">To move </span><span class="rvts16">BACKWARDS</span></p>
+<p class="rvps2"><span class="rvts6">R Key</span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6">To move </span><span class="rvts16">UPWARDS</span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6">NB: Once you release this Key, you will slowly fall back to ground level.</span></p>
+<p class="rvps2"><span class="rvts6">T Key</span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6">To move </span><span class="rvts16">DOWNWARDS</span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6">NB: This Key allows you to get back to ground level faster than normal.</span></p>
+<p class="rvps2"><span class="rvts6">0 Key</span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6">To </span><span class="rvts16">EXIT</span><span class="rvts6"> and return to the GUI </span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6">NB: The 3D View window will capture ALL Keyboard and Mouse inputs and restrict movement to within the bounds of the window. The only way to exit is to either use the </span><span class="rvts16">0</span><span class="rvts6"> Key, or </span><span class="rvts16">Ctrl-Tab</span><span class="rvts6"> to another window.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p></p>
+<p class="rvps7"><span class="rvts17">Created with the Personal Edition of HelpNDoc: </span><a class="rvts18" href="http://www.helpndoc.com">Free EBook and documentation generator</a></p>
+</div>
+	
+	<div id="topic_footer">
+
+			<div id="topic_footer_content">
+				Copyright &copy; 2017 by SpinalSoft (AU). All Rights Reserved.</div>
+		</div>
+	</body>
+	
+</html>
+

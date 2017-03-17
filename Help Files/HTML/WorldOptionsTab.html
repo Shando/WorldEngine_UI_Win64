@@ -1,0 +1,163 @@
+﻿<html>
+	
+<head>
+	<title>World Options Tab</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="generator" content="HelpNDoc Personal Edition 4.9.2.132">
+	<meta name="keywords" content="">
+	
+	<link type="text/css" rel="stylesheet" media="all" href="css/reset.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/base.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/hnd.css" />
+	<!--[if lte IE 8]>
+		<link type="text/css" rel="stylesheet" media="all" href="css/ielte8.css" />
+	<![endif]-->
+	<style type="text/css">
+		#topic_header
+		{
+			background-color: #EFEFEF;
+		}
+	</style>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/hnd.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function()
+		{
+			if (top.frames.length == 0)
+			{
+				var sTopicUrl = top.location.href.substring(top.location.href.lastIndexOf("/") + 1, top.location.href.length);
+				top.location.href = "WorldEngine GUI.html?" + sTopicUrl;
+			}
+			else
+			{
+				var bTocSelected = false;
+				(function waitForTOC()
+				{
+					if (top && top.FrameTOC && top.FrameTOC.SelectTocItem)
+					{
+						top.FrameTOC.SelectTocItem("WorldOptionsTab");
+						bTocSelected = true;
+					}
+					if (!bTocSelected) setTimeout(function() { waitForTOC(); }, 300);
+				})();
+			}
+		});
+	</script>
+	
+	</head>
+
+<body>
+
+<div id="topic_header">
+			<div id="topic_header_content">
+				<h1 id="topic_header_text">World Options Tab</h1>
+				
+				</div>
+			<div id="topic_header_nav">
+				<a href="Wind1.html"><img src="img/arrow_left.png" alt="Previous"/></a>
+				
+				<a href="AncientMapOptionsTab.html"><img src="img/arrow_right.png" alt="Next"/></a>
+				
+				</div>
+			<div class="clear"></div>
+		</div>
+	<div id="topic_content">
+		
+<p></p>
+<h1 class="rvps4"><span class="rvts0"><span class="rvts11">World Options</span></span></h1>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">The </span><span class="rvts16">World Options</span><span class="rvts6"> tab allows the setting of many parameters for the creation of the world.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">It consists of 5 Sub-Tabs:</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts16">Basic World Options</span><span class="rvts6"> - this Sub-Tab lets you set the following options:</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><img alt="" style="padding : 1px;" src="lib/world options 1.png"></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">World Seed</span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6">This is a number representing the Base of the world. It must be between </span><span class="rvts24">1</span><span class="rvts6"> and </span><span class="rvts24">65535</span><span class="rvts6">. You can use the </span><span class="rvts16">Randomise</span><span class="rvts6"> button to generate a random number.</span></p>
+<p class="rvps2"><span class="rvts6">Width</span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6">This is a number representing the number of Pixels for the Width of the world. It must be between </span><span class="rvts24">256</span><span class="rvts6"> and </span><span class="rvts24">8192</span><span class="rvts6">. NB: This should also be divisible by </span><span class="rvts24">8</span><span class="rvts6">.</span></p>
+<p class="rvps2"><span class="rvts6">Height</span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6">This is a number representing the number of Pixels for the Height of the world. It must be between </span><span class="rvts24">256</span><span class="rvts6"> and </span><span class="rvts24">8192</span><span class="rvts6">. NB: This should also be divisible by </span><span class="rvts24">8</span><span class="rvts6">.</span></p>
+<p class="rvps2"><span class="rvts6">No. of Plates</span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6">This is a number representing the number of Tectonic Plates in the world. It must be between </span><span class="rvts24">1</span><span class="rvts6"> and </span><span class="rvts24">100</span><span class="rvts6">. NB: A value of </span><span class="rvts24">1</span><span class="rvts6"> will not really do much as there will be no plate collision.</span></p>
+<p class="rvps2"><span class="rvts6">Recursion Limit</span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6">This is a number representing the number of Recursive Loops to be carried out when generating the world. It must be between </span><span class="rvts24">1.000</span><span class="rvts6"> and </span><span class="rvts24">10.000</span><span class="rvts6">.</span></p>
+<p class="rvps2"><span class="rvts6">GCC Gamma Value</span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6">This is a number that determines the Gamma Value for the Gamma Correction Curve. &nbsp;It must be between </span><span class="rvts24">0.000</span><span class="rvts6"> and </span><span class="rvts24">99.990</span><span class="rvts6">.</span></p>
+<p class="rvps2"><span class="rvts6">GCC Offset</span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6">This is a number that determines the Offset Value for the Gamma Correction Curve. It must be between </span><span class="rvts24">0.000</span><span class="rvts6"> and </span><span class="rvts24">0.999</span><span class="rvts6">.</span></p>
+<p class="rvps2"><span class="rvts6">Sea Level Elevation</span></p>
+<p class="rvps2"><span class="rvts6">Cut Off</span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6">This is a number representing the level at which Sea becomes Land. It must be between </span><span class="rvts24">1.000</span><span class="rvts6"> and </span><span class="rvts24">99.990</span><span class="rvts6">.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts16"><br/></span></p>
+<p class="rvps2"><span class="rvts16">Advanced Plate Options</span><span class="rvts6"> - this Sub-Tab is for advanced users and lets you set the following options:</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><img alt="" style="padding : 1px;" src="lib/world options 2.png"></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Sea Level</span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6">This sets the percentage of dry land before any tectonic simulation has taken place. It must be between </span><span class="rvts24">0.000</span><span class="rvts6"> and </span><span class="rvts24">1.000</span><span class="rvts6">.</span></p>
+<p class="rvps9"><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6">NB: </span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6">A value of </span><span class="rvts24">0.000</span><span class="rvts6"> indicates a world covered with water. Plate tectonics would bring forth islands that would later merge into continents.</span></p>
+<p class="rvps2"><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6">A value of </span><span class="rvts24">1.000</span><span class="rvts6"> indicates a world that's devoid of any oceanic crust, being completely filled with continents, and would cause plate tectonics to halt at the very first steps. </span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Erosion Period</span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6">This sets the number of iterations (i.e. the number of consecutive calls to update method that should pass between sequential runs) of the erosion algorithm. It must be between </span><span class="rvts24">0</span><span class="rvts6"> and </span><span class="rvts24">100</span><span class="rvts6">.</span></p>
+<p class="rvps2"><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6">NB:</span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6">A value of </span><span class="rvts24">0.000</span><span class="rvts6"> indicates that erosion is never applied to the system. </span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Folding Ratio</span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6">This sets the amount of crust that is moved from the source plate to the destination plate at the location where two plates overlap. It must be between </span><span class="rvts24">0.000</span><span class="rvts6"> and </span><span class="rvts24">1.000</span><span class="rvts6">.</span></p>
+<p class="rvps9"><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6">NB:</span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6">A value of </span><span class="rvts24">0.000</span><span class="rvts6"> indicates that nothing is transferred.</span></p>
+<p class="rvps10"><span class="rvts6">A value of </span><span class="rvts24">1.000</span><span class="rvts6"> causes everything to be transferred immediately.</span></p>
+<p class="rvps11"><span class="rvts6">NB2:</span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6">The destination plate is that which has a larger continent at the location of collision.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Absolute Aggregation</span></p>
+<p class="rvps8"><span class="rvts6">Ratio</span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6">This sets the minimum amount of surface area that one continent on a plate must overlap with another continent on another plate during that iteration before the two continents are merged into one continent that resides on either plate. The smaller continent will always be merged to the larger one. It must be between </span><span class="rvts24">0</span><span class="rvts6"> and </span><span class="rvts24">10,000,000</span><span class="rvts6">.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Relative Aggregation</span></p>
+<p class="rvps2"><span class="rvts6">Ratio</span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6">This sets the minimum percentage of surface area of a continent that must overlap with another continent before they are merged into one continent. It must be between </span><span class="rvts24">0.000</span><span class="rvts6"> and </span><span class="rvts24">1.000</span><span class="rvts6">.</span></p>
+<p class="rvps2"><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6">NB:</span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6">A value of </span><span class="rvts24">0.000</span><span class="rvts6"> would cause two colliding continents to become merged immediately.</span></p>
+<p class="rvps2"><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6">A value of </span><span class="rvts24">1.000</span><span class="rvts6"> requires that the smaller plate is completely beneath the larger plate before they are merged together.</span></p>
+<p class="rvps2"><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6">NB2:</span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6">This parameter plays a central role when the rate of continental growth is adjusted. </span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Number of Cycles</span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6">This sets the maximum number of times that the lithosphere is divided into plates. It must be between </span><span class="rvts24">0.000</span><span class="rvts6"> and </span><span class="rvts24">1.000</span><span class="rvts6">.</span></p>
+<p class="rvps9"><span class="rvts6"> </span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6">NB:</span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6">A value of </span><span class="rvts24">0.000</span><span class="rvts6"> indicates that a new set of plates is generated instead of the old ones every time the sum of plate movement slows down too much.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">These variables, along with the number of plates, control the behaviour of the Plates Model and will affect its outcome greatly.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts16">Temperature Range</span><span class="rvts6"> - this Sub-Tab lets you set the following options:</span></p>
+<p class="rvps2"><span class="rvts16"><br/></span></p>
+<p class="rvps2"><img alt="" style="padding : 1px;" src="lib/world options 3.png"></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Temperature Range</span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6">This is a series of 6 numbers that set the limits for the different Temperature Levels. Each number must be between </span><span class="rvts24">0.000</span><span class="rvts6"> and </span><span class="rvts24">1.000</span><span class="rvts6">. NB: The numbers MUST be in </span><span class="rvts16">ASCENDING</span><span class="rvts6"> order.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts16">Precipitation Range</span><span class="rvts6"> - this Sub-Tab lets you set the following options:</span></p>
+<p class="rvps2"><span class="rvts16"><br/></span></p>
+<p class="rvps2"><img alt="" style="padding : 1px;" src="lib/world options 4.png"></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Precipitation Range</span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6">This is a series of 7 numbers that set the limits for the different Precipitation Levels. Each number must be between </span><span class="rvts24">0.000</span><span class="rvts6"> and </span><span class="rvts24">1.000</span><span class="rvts6">. NB: The numbers MUST be in </span><span class="rvts16">ASCENDING</span><span class="rvts6"> order.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts16">Basic World Output Options</span><span class="rvts6"> - this Sub-Tab lets you set the following options:</span></p>
+<p class="rvps2"><span class="rvts16"><br/></span></p>
+<p class="rvps2"><img alt="" style="padding : 1px;" src="lib/world options 5.png"></p>
+<p class="rvps2"><span class="rvts16"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Create B&amp;W Images?</span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6">This is a simple Yes/No choice and determines whether some of the Maps should be in Black &amp; White or Colour.</span></p>
+<p class="rvps2"><span class="rvts6">Enable Verbose</span></p>
+<p class="rvps2"><span class="rvts6">Messages?</span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6">This is a simple Yes/No choice and determines whether the pop-up shows more detail when generating the world.</span></p>
+<p class="rvps2"><span class="rvts6">Use Protocol Buffer?</span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6">This is a simple Yes/No choice and determines whether to use the Google Protocol Buffer, or HDF5 to store the world data. NB: HDF5 generates a smaller world file.</span></p>
+<p class="rvps2"><span class="rvts6">Fade Borders?</span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6">This is a simple Yes/No choice and determines whether to fade out the borders of the world.</span></p>
+<p class="rvps2"><span class="rvts6">Export Format</span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6">This is a drop-down allowing the selection of the Format for the Maps. This contains the usual image formats (png, jpg, gif etc.) as well as many cartography formats (Erdas Image, ERMapper etc.)</span></p>
+<p class="rvps2"><span class="rvts6">Export Data Type</span><span class="rvts6"> &nbsp; &nbsp; &nbsp; &nbsp;</span><span class="rvts6">This is a drop-down allowing the selection of the Data Type for the Maps. This contains many options from </span><span class="rvts24">uint8</span><span class="rvts25"> </span><span class="rvts6">(unsigned 8 bit integer) to </span><span class="rvts24">float64</span><span class="rvts6"> (64 bit floating point).</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6">Finally, beneath the Tabs there is a button labelled </span><span class="rvts16">Generate World and All Maps (ex Ancient Map)</span><span class="rvts6"> which basically does exactly what it says, generates the World and ALL </span><a class="rvts12" href="TheMaps.html">Maps</a><span class="rvts6">, with the exception of the Ancient Map.</span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts6"><br/></span></p>
+<p></p>
+<p class="rvps7"><span class="rvts17">Created with the Personal Edition of HelpNDoc: </span><a class="rvts18" href="http://www.helpndoc.com/help-authoring-tool">Free help authoring tool</a></p>
+</div>
+	
+	<div id="topic_footer">
+
+			<div id="topic_footer_content">
+				Copyright &copy; 2017 by SpinalSoft (AU). All Rights Reserved.</div>
+		</div>
+	</body>
+	
+</html>
+
