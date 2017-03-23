@@ -112,10 +112,22 @@ span.rvts20
 }
 span.rvts21
 {
+ font-size: 14pt;
+ font-family: 'Candara';
+ font-weight: bold;
+}
+span.rvts22
+{
+ font-size: 13pt;
+ font-family: 'Candara';
+ font-weight: bold;
+}
+span.rvts23
+{
  font-family: 'Consolas';
  font-style: italic;
 }
-a.rvts22, span.rvts22
+a.rvts24, span.rvts24
 {
  font-size: 12pt;
  font-family: 'Candara';
@@ -123,25 +135,19 @@ a.rvts22, span.rvts22
  color: #0000ff;
  text-decoration: underline;
 }
-a.rvts23, span.rvts23
+a.rvts25, span.rvts25
 {
  font-size: 12pt;
  font-family: 'Candara';
  color: #0000ff;
  text-decoration: underline;
-}
-span.rvts24
-{
- font-size: 14pt;
- font-family: 'Candara';
- font-weight: bold;
-}
-span.rvts25
-{
- font-size: 14pt;
- font-family: 'Candara';
 }
 span.rvts26
+{
+ font-size: 14pt;
+ font-family: 'Candara';
+}
+span.rvts27
 {
  font-size: 12pt;
  font-weight: bold;

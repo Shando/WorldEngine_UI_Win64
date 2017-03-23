@@ -17,8 +17,8 @@
    <string>Worldengine Dialog</string>
   </property>
   <property name="windowIcon">
-   <iconset>
-    <normaloff>Images/icon.png</normaloff>Images/icon.png</iconset>
+   <iconset resource="new_gui_4.qrc">
+    <normaloff>:/Images/icon.png</normaloff>:/Images/icon.png</iconset>
   </property>
   <property name="styleSheet">
    <string notr="true">QToolTip
